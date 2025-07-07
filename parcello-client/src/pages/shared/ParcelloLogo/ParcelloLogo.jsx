@@ -1,13 +1,13 @@
 import logo from "../../../assets/logo.png";
 const ParcelloLogo = () => {
 	return (
-		<div className="flex items-center">
+		<div className="flex items-end">
 			<img
 				src={logo}
 				alt='Logo'
-                className="w-8"
+                className=" mb-1"
 			/>
-			<p className="text-3xl">Parcello</p>
+			<p className="text-3xl font-extrabold -ml-2">Parcello</p>
 		</div>
 	);
 };
