@@ -48,7 +48,7 @@ const Benefits = () => {
 					>
 						{/* Image */}
 						<div className='md:w-52 flex items-center justify-center'>
-							<div className='w-60 h-60 bg-gray-50 rounded-xl flex items-center justify-center'>
+							<div className='w-60 h-60 rounded-xl flex items-center justify-center'>
 								<img
 									src={benefit.image}
 									alt={benefit.title}
