@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
+import ParcelloLogo from "../ParcelloLogo/ParcelloLogo";
 
 const Navbar = () => {
 	const navItems = (
@@ -44,7 +45,7 @@ const Navbar = () => {
 						{navItems}
 					</ul>
 				</div>
-				<a className='btn btn-ghost text-xl'>Parcello</a>
+				<a className='btn btn-ghost text-xl'><ParcelloLogo /></a>
 			</div>
 			<div className='navbar-center hidden lg:flex'>
 				<ul className='menu menu-horizontal px-1'>{navItems}</ul>
