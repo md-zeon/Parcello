@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router";
+import SocialLogin from "../../shared/Auth/SocialLogin";
 const Login = () => {
 	const {
 		register,
@@ -12,6 +14,8 @@ const Login = () => {
 
 	return (
 		<div>
+			<h1 className='text-4xl font-black'>Welcome Back</h1>
+			<p className='font-medium mt-2 mb-3'>Login with Parcello</p>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<fieldset className='fieldset'>
 					{/* Email */}
@@ -19,7 +23,7 @@ const Login = () => {
 					<input
 						type='email'
 						{...register("email", { required: true })}
-						className='input'
+						className='input w-full bg-white'
 						placeholder='Email'
 					/>
 					{/* Email Error Messages */}
@@ -34,7 +38,7 @@ const Login = () => {
 							required: true,
 							minLength: 6,
 						})}
-						className='input'
+						className='input w-full bg-white'
 						placeholder='Password'
 					/>
 					{/* Error Messages */}
@@ -46,12 +50,31 @@ const Login = () => {
 					)}
 					{/* Forgot Password */}
 					<div>
-						<a className='link link-hover'>Forgot password?</a>
+						<Link
+							to='/forgot-password'
+							className='link underline text-sm'
+						>
+							Forgot password?
+						</Link>
+					</div>
+					{/* Login */}
+					<button className='btn btn-primary mt-4'>Login</button>
+
+					{/* Don't have an account? */}
+					<div>
+						Don't have an account?{" "}
+						<Link
+							to='/register'
+							className='btn btn-link mx-0 px-0 text-xs'
+						>
+							Register
+						</Link>
 					</div>
 				</fieldset>
-				{/* Login */}
-				<button className='btn btn-neutral mt-4'>Login</button>
 			</form>
+			<div className='divider'>Or</div>
+			{/* Social Login */}
+			<SocialLogin process={"Login"} />
 		</div>
 	);
 };

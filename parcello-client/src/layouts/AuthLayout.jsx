@@ -4,10 +4,10 @@ import ParcelloLogo from "../pages/shared/ParcelloLogo/ParcelloLogo";
 
 const AuthLayout = () => {
 	return (
-		<div className='grid grid-cols-1 sm:grid-cols-2 min-h-screen'>
+		<div className='grid grid-cols-1 md:grid-cols-2'>
 			<div className='bg-white p-8'>
 				<ParcelloLogo />
-				<div className='mt-24 mx-auto max-w-md'>
+				<div className='mt-10 mx-auto max-w-sm'>
 					<Outlet />
 				</div>
 			</div>

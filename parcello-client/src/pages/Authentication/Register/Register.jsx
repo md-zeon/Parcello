@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
+import { Link } from "react-router";
+import SocialLogin from "../../shared/Auth/SocialLogin";
 
 const Register = () => {
 	const { createUser } = useAuth();
@@ -24,14 +26,26 @@ const Register = () => {
 
 	return (
 		<div>
+			<h1 className='text-4xl font-black'>Create An Account</h1>
+			<p className='font-medium mt-2 mb-3'>Register with Parcello</p>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<fieldset className='fieldset'>
+					{/* Name */}
+					<label className='label'>Name</label>
+					<input
+						type='text'
+						{...register("name", { required: true })}
+						className="input bg-white w-full"
+						placeholder="Full Name"
+					/>
+					{/* Name Error Message */}
+					{errors.name && <span className='text-error'>{errors.name.type === "required" && "Name is required"}</span>}
 					{/* Email */}
 					<label className='label'>Email</label>
 					<input
 						type='email'
 						{...register("email", { required: true })}
-						className='input'
+						className='input bg-white w-full'
 						placeholder='Email'
 					/>
 					{/* Email Error Messages */}
@@ -46,7 +60,7 @@ const Register = () => {
 							required: true,
 							minLength: 6,
 						})}
-						className='input'
+						className='input bg-white w-full'
 						placeholder='Password'
 					/>
 					{/* Password Error Messages */}
@@ -56,13 +70,22 @@ const Register = () => {
 							{errors.password?.type === "minLength" && "Password must be at least 6 characters"}
 						</span>
 					)}
-					{/* Forgot Password */}
+					{/* Register */}
+					<button className='btn btn-primary mt-4'>Create An Account</button>
+					{/* Already have an account? */}
 					<div>
-						<a className='link link-hover'>Forgot password?</a>
+						Already have an account?{" "}
+						<Link
+							to='/login'
+							className='btn btn-link mx-0 px-0 text-xs'
+						>
+							Login
+						</Link>
 					</div>
 				</fieldset>
-				{/* Register */}
-				<button className='btn btn-neutral mt-4'>Create An Account</button>
+				<div className='divider'>Or</div>
+				{/* Social Login */}
+				<SocialLogin process={"Register"} />
 			</form>
 		</div>
 	);
