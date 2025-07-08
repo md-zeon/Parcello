@@ -18,10 +18,14 @@ const Login = () => {
 					<label className='label'>Email</label>
 					<input
 						type='email'
-						{...register("email")}
+						{...register("email", { required: true })}
 						className='input'
 						placeholder='Email'
 					/>
+					{/* Email Error Messages */}
+					{errors.email && (
+						<span className='text-error'>{errors.email.type === "required" && "Email is required"}</span>
+					)}
 					{/* Password */}
 					<label className='label'>Password</label>
 					<input
