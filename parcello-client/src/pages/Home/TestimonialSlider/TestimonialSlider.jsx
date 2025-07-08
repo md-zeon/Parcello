@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import 'swiper/css/pagination';
 import { LuChevronLeft, LuChevronRight, LuQuote } from "react-icons/lu";
+import customerTop from "../../../assets/customer-top.png";
 
 const testimonials = [
 	{
@@ -23,14 +24,14 @@ const testimonials = [
 	},
 	{
 		quote:
-			"As a delivery agent, I love the system’s simplicity and the fact that I earn on every successful drop-off. It’s smooth and fair.",
+			"As a delivery agent, I love the system's simplicity and the fact that I earn on every successful drop-off. It's smooth and fair.",
 		name: "Rafiq Hasan",
 		title: "Delivery Agent, Parcello",
 		image: "https://img.daisyui.com/images/profile/demo/kenobee@192.webp",
 	},
 	{
 		quote:
-			"With Parcello’s dashboard, managing bookings and tracking parcels became 10x easier. It’s a lifesaver for SMEs.",
+			"With Parcello's dashboard, managing bookings and tracking parcels became 10x easier. It's a lifesaver for SMEs.",
 		name: "Sumaiya Khatun",
 		title: "Founder, Urban Craft BD",
 		image: "https://img.daisyui.com/images/profile/demo/3@94.webp",
@@ -43,7 +44,7 @@ const testimonials = [
 		image: "https://img.daisyui.com/images/profile/demo/anakeen@192.webp",
 	},
 	{
-		quote: "Secure, dependable, and feature-rich. Parcello’s OTP system ensured zero parcel losses this quarter.",
+		quote: "Secure, dependable, and feature-rich. Parcello's OTP system ensured zero parcel losses this quarter.",
 		name: "Mehedi Hasan",
 		title: "Logistics Coordinator, eMart",
 		image: "https://img.daisyui.com/images/profile/demo/spiderperson@192.webp",
@@ -55,9 +56,12 @@ function TestimonialSlider() {
 	const swiperRef = useRef(null);
 
 	return (
-		<div className='bg-[#f3f6f8] py-16 px-4'>
-			<div className='max-w-4xl mx-auto text-center mb-10'>
-				<h2 className='text-2xl md:text-3xl font-bold text-gray-900 mb-2'>What our customers are saying</h2>
+		<div className='bg-base-100 py-16 px-4'>
+			<div className='max-w-4xl mx-auto text-center pb-16 space-y-3'>
+				<div className="grid place-items-center">
+					<img src={customerTop} alt="Customer Review Section Logo" />
+				</div>
+				<h2 className='text-2xl md:text-3xl font-bold text-secondary'>What our customers are saying</h2>
 				<p className='text-gray-600 max-w-2xl mx-auto'>
 					Parcello is trusted by businesses and individuals alike for secure, fast, and intelligent parcel management.
 				</p>
