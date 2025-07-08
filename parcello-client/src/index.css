@@ -42,3 +42,11 @@
 	font-weight: 400;
 	font-style: normal;
 }
+
+.swiper-pagination-bullet-active {
+	@apply !bg-secondary;
+}
+
+.my-swiper .swiper-pagination-bullet {
+	@apply !hidden md:!inline-block;
+}
