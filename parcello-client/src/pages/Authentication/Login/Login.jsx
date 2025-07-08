@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
-import SocialLogin from "../../shared/Auth/SocialLogin";
+import SocialLogin from "../SocialLogin/SocialLogin";
+
 const Login = () => {
 	const {
 		register,

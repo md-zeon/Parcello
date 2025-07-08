@@ -1,7 +1,24 @@
+import useAuth from "../../../hooks/useAuth";
+
 const SocialLogin = ({ process }) => {
+	const { signInWithGoogle } = useAuth();
+	const handleGoogleLogin = () => {
+		signInWithGoogle()
+			.then((result) => {
+				const user = result.user;
+				console.log("User logged in with Google:", user);
+			})
+			.catch((error) => {
+				console.error("Error logging in with Google:", error);
+			});
+	};
+
 	return (
 		<div>
-			<button className='btn btn-secondary w-full mt-4'>
+			<button
+				className='btn btn-secondary w-full mt-4'
+				onClick={handleGoogleLogin}
+			>
 				{/* Google */}
 				<svg
 					aria-label='Google logo'
