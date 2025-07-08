@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
-const Login = () => {
+
+const Register = () => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
-
 	const onSubmit = (data) => {
 		console.log(data);
 	};
@@ -18,10 +18,14 @@ const Login = () => {
 					<label className='label'>Email</label>
 					<input
 						type='email'
-						{...register("email")}
+						{...register("email", { required: true })}
 						className='input'
 						placeholder='Email'
 					/>
+					{/* Email Error Messages */}
+					{errors.email && (
+						<span className='text-error'>{errors.email.type === "required" && "Email is required"}</span>
+					)}
 					{/* Password */}
 					<label className='label'>Password</label>
 					<input
@@ -33,7 +37,7 @@ const Login = () => {
 						className='input'
 						placeholder='Password'
 					/>
-					{/* Error Messages */}
+					{/* Password Error Messages */}
 					{errors.password && (
 						<span className='text-error'>
 							{errors.password?.type === "required" && "Password is required"}
@@ -45,11 +49,11 @@ const Login = () => {
 						<a className='link link-hover'>Forgot password?</a>
 					</div>
 				</fieldset>
-				{/* Login */}
-				<button className='btn btn-neutral mt-4'>Login</button>
+				{/* Register */}
+				<button className='btn btn-neutral mt-4'>Create An Account</button>
 			</form>
 		</div>
 	);
 };
 
-export default Login;
+export default Register;
