@@ -9,7 +9,6 @@ const benefits = [
 		description:
 			"Stay updated in real-time with our live parcel tracking feature. From pick-up to delivery, monitor your shipment's journey and get instant status updates for complete peace of mind.",
 		image: tracking,
-		aos: "fade-right",
 	},
 	{
 		id: 2,
@@ -17,7 +16,6 @@ const benefits = [
 		description:
 			"We ensure your parcels are handled with the utmost care and delivered securely to their destination. Our reliable process guarantees safe and damage-free delivery every time.",
 		image: safeDelivery,
-		aos: "fade-left",
 	},
 	{
 		id: 3,
@@ -25,7 +23,6 @@ const benefits = [
 		description:
 			"Our dedicated support team is available around the clock to assist you with any questions, updates, or delivery concerns—anytime you need us.",
 		image: support,
-		aos: "fade-right",
 	},
 ];
 
@@ -44,7 +41,8 @@ const Benefits = () => {
 					<div
 						key={benefit.id}
 						className='bg-white p-8 rounded-3xl flex flex-col md:flex-row items-center overflow-hidden'
-						data-aos={benefit.aos}
+						data-aos='fade-right'
+						data-aos-delay={benefit.id * 200}
 					>
 						{/* Image */}
 						<div className='md:w-52 flex items-center justify-center'>

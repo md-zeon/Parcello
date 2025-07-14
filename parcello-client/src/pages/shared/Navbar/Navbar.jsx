@@ -1,15 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import ParcelloLogo from "../ParcelloLogo/ParcelloLogo";
 
 const Navbar = () => {
 	const navItems = (
 		<>
 			<li>
-				<NavLink className="text-primary font-bold" to='/'>Home</NavLink>
+				<NavLink
+					className='text-primary font-bold'
+					to='/'
+				>
+					Home
+				</NavLink>
 			</li>
 			<li>
 				<NavLink to='/about'>About Us</NavLink>
+			</li>
+			<li>
+				<NavLink to='/coverage'>Coverage</NavLink>
 			</li>
 		</>
 	);
@@ -45,13 +53,15 @@ const Navbar = () => {
 						{navItems}
 					</ul>
 				</div>
-				<a className='btn btn-ghost text-xl'><ParcelloLogo /></a>
+				<div className='text-xl'>
+					<ParcelloLogo />
+				</div>
 			</div>
 			<div className='navbar-center hidden lg:flex'>
 				<ul className='menu menu-horizontal px-1'>{navItems}</ul>
 			</div>
 			<div className='navbar-end'>
-				<a className='btn'>Button</a>
+				<Link to="/login" className='btn btn-primary'>Login</Link>
 			</div>
 		</div>
 	);

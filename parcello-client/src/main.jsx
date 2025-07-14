@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 import AuthProvider from "./contexts/AuthContext/AuthProvider.jsx";
 
-Aos.init();
+Aos.init({ duration: 1000});
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
