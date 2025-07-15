@@ -17,12 +17,15 @@ const Navbar = () => {
 				<NavLink to='/about'>About Us</NavLink>
 			</li>
 			<li>
+				<NavLink to='/sendParcel'>Send a Parcel</NavLink>
+			</li>
+			<li>
 				<NavLink to='/coverage'>Coverage</NavLink>
 			</li>
 		</>
 	);
 	return (
-		<div className='navbar bg-base-100 shadow-sm'>
+		<div className='navbar rounded-xl px-4 shadow-sm'>
 			<div className='navbar-start'>
 				<div className='dropdown'>
 					<div
